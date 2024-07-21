@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-int main() {
+int example();
+int example1();
+
+int main () {
+    example1();
+    return 0;
+}
+
+int example() {
     int i, j;
 
     float x;
@@ -21,3 +29,23 @@ int main() {
 // %d reads 5
 // 6 left in buffer
 // so need to be careful!!!
+
+int example1() {
+    int x;
+    float i, j;
+
+    scanf("%f%d%f", &i, &x, &j);
+
+    printf("%f\n", i);
+    printf("%d\n", x);
+    printf("%f\n", j);
+
+    return 0;
+}
+
+// if enter 12.3 45.6 789
+// %f reads 12.300000
+// %d reads 45
+// 0.6 789 in buffer
+// %f reads 0.6000000
+// 789 left in buffer
