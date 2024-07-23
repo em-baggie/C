@@ -1,3 +1,5 @@
+// Exercises showing why need to be careful about using scanf
+
 #include <stdio.h>
 
 int example();

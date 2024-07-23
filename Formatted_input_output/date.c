@@ -1,3 +1,5 @@
+// Code to format date
+
 #include <stdio.h>
 
 int main(void) {
