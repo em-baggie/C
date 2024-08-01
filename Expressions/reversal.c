@@ -3,14 +3,17 @@
 #include <stdio.h>
 
 int main(void) {
-    int num, first, second, third;
+    int num, a;
 
-    printf("Enter a three-digit number: ");
+    printf("Enter a number: ");
     scanf("%d", &num);
 
-    third = num % 10;
-    second = (num / 10) % 10;  
-    first = num / 100;
+    printf("Reversed number: ");
+    do {
+        a = num % 10;
+        printf("%d", a);
+        num /= 10;
+    }
 
-    printf("The reversal is: %d%d%d\n", third, second, first);
+    while (num > 0);
 }
