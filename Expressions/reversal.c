@@ -1,19 +1,14 @@
-// reverses a 3-digit number
-
 #include <stdio.h>
 
 int main(void) {
-    int num, a;
+    int num, first, second, third;
 
-    printf("Enter a number: ");
+    printf("Enter a three-digit number: ");
     scanf("%d", &num);
 
-    printf("Reversed number: ");
-    do {
-        a = num % 10;
-        printf("%d", a);
-        num /= 10;
-    }
+    third = num % 10;
+    second = (num / 10) % 10;  
+    first = num / 100;
 
-    while (num > 0);
+    printf("The reversal is: %d%d%d\n", third, second, first);
 }
