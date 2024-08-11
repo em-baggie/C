@@ -26,8 +26,8 @@ int example() {
 
 // if input 10.3 5 6
 // %d: reads 10 as integer assigns it to i, .5 left in buffer
-// .5 5 6 in buffer
-// %f reads 0.5
+// .3 5 6 in buffer
+// %f reads 0.3
 // %d reads 5
 // 6 left in buffer
 // so need to be careful!!!
