@@ -1,10 +1,7 @@
-// TO FINISH
+// Uses Newton's method to compute the square root of a positive floating point number.
 
 #include <stdio.h> 
 #include <math.h>
-
-// initially y1=1
-// guesses then 
 
 int main(void) {
     double x, y2, avg, y1, diff;
@@ -12,13 +9,11 @@ int main(void) {
     printf("Enter a positive number: ");
     scanf("%lf", &x);
 
-    diff = fabs(y2 - y1);
-    avg = (y1 + (x/y1)) / 2;
-
     y1 = 1;
 
     do {
-        y2 = avg;
+        y2 = (y1 + (x/y1)) / 2;
+        diff = fabs(y1 - y2);
         y1 = y2;
     } while (diff > 0.00001 * y2);
 
