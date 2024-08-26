@@ -1,27 +1,33 @@
+// prints a table showing number of occurences for each digit in an entered number
+
 #include <stdio.h>
 #include <stdbool.h>
 
 int main(void) {
-    bool digit_seen[10] = {false};
-    bool digit_printed[10] = {false};
+    int digit_count[10] = {0};
     int digit;
     long n;
 
     printf("Enter a number: ");
     scanf("%ld", &n);
-    printf("Repeated digit(s): ");
 
+    printf("Digit:      ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    
+    printf("Occurences: ");
     while (n > 0) {
         digit = n % 10;
-        if (digit_seen[digit]) {
-            if (!(digit_printed[digit])) {
-                printf("%d ", digit);
-                digit_printed[digit] = true;
-            }
-        } else {
-            digit_seen[digit] = true;
-        }
+        digit_count[digit] += 1;
         n /= 10;
     }
+    
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", digit_count[i]);
+    }
+    printf("\n");
+
     return 0;
 }
