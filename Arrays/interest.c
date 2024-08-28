@@ -1,4 +1,4 @@
-/* Prints a table of compound  interest */
+/* Prints a table of compound  interest by compounding interest monthly */
 
 #include <stdio.h>
 #define NUM_RATES ((int) (sizeof (value) / sizeof (value [0])))
@@ -6,7 +6,7 @@
 
 int main(void) {
     int i , low_rate, num_years, year;
-    double value [5];
+    double value[5];
 
     printf("Enter interest rate: ");
     scanf("%d", &low_rate);
@@ -23,8 +23,12 @@ int main(void) {
     for (year = 1; year <= num_years; year++) {
         printf("%3d    ", year);
         for (i = 0; i < NUM_RATES; i++) {
-            value[i] += (low_rate + i) / 100.0 * value[i];
-            printf("%7.2f", value[i]);
+            // loop through each month
+            for (int j = 0; j < 12; j++) {
+                // divide annual interest rate by 12 to find monthly rate
+                value[i] += ((double)(low_rate + i) / 12) / 100.0 * value[i];
+                printf("%7.2f", value[i]);
+            }
         }
         printf("\n");
     }
