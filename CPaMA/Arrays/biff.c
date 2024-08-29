@@ -1,44 +1,45 @@
 #include <stdio.h>
+#include <ctype.h>
+
 #define MAX 20
 
 int main(void) {
     char sentence[MAX] = {0};
-    char ch;
+    char ch, chi;
     int i = 0;
 
-    printf("Enter a message: ");
-    while ((ch = getchar()) != '\n') {
-            sentence[i] = ch;
-            i++;
-        }
+    printf("Enter message: ");
+    while ((ch = getchar()) != '\n' && i < MAX) {
+        sentence[i] = ch;
+        i++;
     }
-    printf("\nIn B1FF-speak: ");
 
-    for (int i = 0; i < MAX; i++) {
-        switch (sentence[i]) {
+    printf("In B1FF-speak: ");
+
+    for (i = 0; i < MAX; i++) {
+        chi = toupper(sentence[i]);
+        switch(chi) {
             case 'A':
-                printf("4");
+                putchar('4');
                 break;
             case 'B':
-                printf("8");
+                putchar('8');
                 break;
             case 'E':
-                printf("3");
+                putchar('3');
                 break;
             case 'I':
-                printf("1");
+                putchar('1');
                 break;
             case 'O':
-                printf("0");
+                putchar('0');
                 break;
             case 'S':
-                printf("5");
+                putchar('5');
                 break;
             default:
-                printf("%c", sentence[i]);
-                break;
+                putchar(chi);
         }
-    
     }
-    printf("\n");
+    printf("!!!!!!!!!!\n");
 }
