@@ -1,26 +1,20 @@
 #include <stdio.h>
 
 int main(void) {
-    int row[5] = {0};
-    int rowt[5] = {0};
-    int colt[5] = {0};
+    int grid[5][5] = {0};
+
     char ch;
-    int totalr;
-    int totalc;
+    int totalr[5] = {0};
+    int totalc[5] = {0};
     
     for (int i = 0; i < 5; i++) {
-        for (int j = 0; i < 5; j++) {
-            printf("Enter row %d: ", i + 1);
-            while ((ch = getchar()) != '\n' && i < 5) {
-            row[j] = (int) ch;
-            printf("%d", row[j]);
-            rowt[i] += row[j];
-            j++;
-            colt[j] += row[j];
+        printf("Enter row %d: ", (i + 1));
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &grid[i][j]);
+            totalr[i] += grid[i][j];
+            totalc[j] += grid[i][j];
             }
         }
-        printf("\n");
-    }
-    printf("Row totals: %d %d %d %d %d", rowt[0], rowt[1], rowt[2], rowt[3], rowt[4]);
-    printf("Column totals: %d %d %d %d %d", colt[0], colt[1], colt[2], colt[3], colt[4]);
+    printf("Row totals: %d %d %d %d %d\n", totalr[0], totalr[1], totalr[2], totalr[3], totalr[4]);
+    printf("Column totals: %d %d %d %d %d\n", totalc[0], totalc[1], totalc[2], totalc[3], totalc[4]);
 }
