@@ -2,8 +2,6 @@
 
 int main(void) {
     int grid[5][5] = {0};
-
-    char ch;
     int totalr[5] = {0};
     int totalc[5] = {0};
     
