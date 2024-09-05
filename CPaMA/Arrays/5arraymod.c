@@ -4,6 +4,8 @@ then computes the total score and average score for each student,
 and the average score. high score, and low score for each quiz.
 */
 
+// NEED TO FIX - ROWS SHOW STUDENT SCORES, COLUMNS SHOW QUIZ
+
 #include <stdio.h>
 #define GRID_SIZE 5
 #define MAX_NUM 100
@@ -55,7 +57,7 @@ int main(void) {
         }
     }
 
-    printf("Total score for each student: %d %d %d %d %d\n", totalc[0], totalc[1], totalc[2], totalc[3], totalc[4]);
+    printf("Total score for each student: %d %d %d %d %d\n", totalr[0], totalr[1], totalr[2], totalr[3], totalr[4]);
     printf("Average score for each student: %.2f %.2f %.2f %.2f %.2f\n", (float) totalc[0]/GRID_SIZE, (float) totalc[1]/GRID_SIZE, (float) totalc[2]/GRID_SIZE, (float) totalc[3]/GRID_SIZE, (float) totalc[4]/GRID_SIZE);
     printf("Average score for each quiz: %.2f %.2f %.2f %.2f %.2f\n", avg_quiz[0], avg_quiz[1], avg_quiz[2], avg_quiz[3], avg_quiz[4]);
     printf("High score for each quiz: %d %d %d %d %d\n", hs[0], hs[1], hs[2], hs[3], hs[4]);
