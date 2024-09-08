@@ -62,5 +62,4 @@ int main(void) {
     printf("Average score for each quiz: %.2f %.2f %.2f %.2f %.2f\n", avg_quiz[0], avg_quiz[1], avg_quiz[2], avg_quiz[3], avg_quiz[4]);
     printf("High score for each quiz: %d %d %d %d %d\n", hs[0], hs[1], hs[2], hs[3], hs[4]);
     printf("Low score for each quiz: %d %d %d %d %d\n", ls[0], ls[1], ls[2], ls[3], ls[4]);
-
 }
