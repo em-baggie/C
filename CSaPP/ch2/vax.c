@@ -13,6 +13,8 @@
    }
    /* Compute x^y using only calls to functions bis and bic */
    int bool_xor(int x, int y) {
-    int result =   ;
+    int result = bis(bic(x,y), bic(y,x));
     return result;
    }
+
+   // bic is equivalent to X AND NOT(m)
